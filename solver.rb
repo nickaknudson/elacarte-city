@@ -16,11 +16,15 @@ end
 
 def grow_point(city, r, c)
   area = 0
+  md = depth(city, r, c)
   for i in c...length(city, r, c) # exclusive range
     l = i+1 - c
     d = depth(city, r, i) - r
-    if l*d > area
-      area = l*d
+    if d < md
+      md = d
+    end
+    if l*md > area
+      area = l*md
     end
   end
   return area
@@ -30,7 +34,7 @@ end
 
 def analyze(city)
   #analysis = Array.new
-  farea = 0
+  farea, fr, fc = 0
   city.each_with_index do |row, r|
     #arow = Array.new
     row.each_with_index do |col, c|
@@ -61,4 +65,5 @@ end
 
 puts "Loading city"
 city = load_city
+#analysis = analyze city
 puts analyze city
