@@ -39,13 +39,15 @@ def analyze(city)
         #arow[c] = area
         if area > farea
           farea = area
+          fr = r
+          fc = c
         end
       end
     #analysis[r] = arow
     end
   end
   #return analysis
-  return farea
+  return farea, fr, fc
 end
 
 def load_city
