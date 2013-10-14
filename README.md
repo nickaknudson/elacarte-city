@@ -14,7 +14,7 @@ solver.rb
 ================
 
 ```
-$ ./spell_suggest.rb 
+$ ./solver.rb 
 Loading city
 area: 44
 row: 5742
